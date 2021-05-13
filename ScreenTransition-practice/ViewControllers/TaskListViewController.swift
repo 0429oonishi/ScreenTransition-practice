@@ -17,15 +17,14 @@ final class TaskListViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "TaskListTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "TaskListTableViewCell")
+        tableView.register(TaskListTableViewCell.nib,
+                           forCellReuseIdentifier: TaskListTableViewCell.identifier)
         tableView.tableFooterView = UIView()
         
     }
     
     @IBAction private func addButtonDidTapped(_ sender: Any) {
-        let addTaskVC = UIStoryboard(name: "AddTask", bundle: nil).instantiateViewController(identifier: "AddTaskViewController") as! AddTaskViewController
-        addTaskVC.onTapEvent = { user in
+        let addTaskVC = AddTaskViewController.instantiate { user in
             guard let user = user else { return }
             self.users.append(user)
             self.tableView.reloadData()
@@ -44,7 +43,7 @@ extension TaskListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskListTableViewCell") as! TaskListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TaskListTableViewCell.identifier) as! TaskListTableViewCell
         let user = users[indexPath.row]
         cell.setup(user: user) { [weak self] in
             self?.presentUserInfoVC(user: user)
@@ -57,8 +56,7 @@ extension TaskListViewController: UITableViewDataSource {
     }
     
     private func presentUserInfoVC(user: User) {
-        let userInfoVC = UIStoryboard(name: "UserInfo", bundle: nil).instantiateViewController(identifier: "UserInfoViewController") as! UserInfoViewController
-        userInfoVC.user = user
+        let userInfoVC = UserInfoViewController.instantiate(user: user)
         userInfoVC.modalPresentationStyle = .fullScreen
         present(userInfoVC, animated: true, completion: nil)
     }

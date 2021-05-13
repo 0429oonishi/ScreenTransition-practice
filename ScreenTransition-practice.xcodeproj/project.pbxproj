@@ -20,6 +20,8 @@
 		AB2586B4264C80300024894D /* TaskListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2586B2264C80300024894D /* TaskListTableViewCell.xib */; };
 		AB2586B7264C87910024894D /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2586B6264C87910024894D /* UserInfoViewController.swift */; };
 		AB2586B9264C87970024894D /* UserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2586B8264C87970024894D /* UserInfo.storyboard */; };
+		AB2586BC264CA8290024894D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2586BB264CA8290024894D /* UIViewController+Extension.swift */; };
+		AB2586BE264CAAE10024894D /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2586BD264CAAE10024894D /* UITableViewCell+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		AB2586B2264C80300024894D /* TaskListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskListTableViewCell.xib; sourceTree = "<group>"; };
 		AB2586B6264C87910024894D /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		AB2586B8264C87970024894D /* UserInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserInfo.storyboard; sourceTree = "<group>"; };
+		AB2586BB264CA8290024894D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		AB2586BD264CAAE10024894D /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 		AB25868A264C76B40024894D /* ScreenTransition-practice */ = {
 			isa = PBXGroup;
 			children = (
+				AB2586BA264CA8120024894D /* Extensions */,
 				AB2586A9264C78430024894D /* Models */,
 				AB2586AA264C78480024894D /* Views */,
 				AB2586A8264C78300024894D /* ViewControllers */,
@@ -126,6 +131,15 @@
 				AB2586B2264C80300024894D /* TaskListTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		AB2586BA264CA8120024894D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB2586BB264CA8290024894D /* UIViewController+Extension.swift */,
+				AB2586BD264CAAE10024894D /* UITableViewCell+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,9 +215,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB2586BC264CA8290024894D /* UIViewController+Extension.swift in Sources */,
 				AB2586A4264C780B0024894D /* TaskListViewController.swift in Sources */,
 				AB2586B7264C87910024894D /* UserInfoViewController.swift in Sources */,
 				AB25868C264C76B40024894D /* AppDelegate.swift in Sources */,
+				AB2586BE264CAAE10024894D /* UITableViewCell+Extension.swift in Sources */,
 				AB2586B3264C80300024894D /* TaskListTableViewCell.swift in Sources */,
 				AB2586AC264C785E0024894D /* User.swift in Sources */,
 				AB25868E264C76B40024894D /* SceneDelegate.swift in Sources */,
